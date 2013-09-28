@@ -137,10 +137,7 @@ class SoapWrap {
 			if( is_numeric($uic) === false )
 				throw new \InvalidArgumentException('UID must be a positive integer');
 
-			//var_dump($uic);
 			$trainQueue = $this->Client->getStationQueue( ['request' => ['UICNumber' => $uic ]]);
-			//var_dump($trainQueue);
-			//die;
 
 			if( is_object($trainQueue) === false)
 				return [];
